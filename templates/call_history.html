@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Call History</h2>
+    <p>{{ user.get_username }}, these are your past calls:</p>
+    <table class = "table table-hover">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Number</th>
+            <th>Duration</th>
+            <th>Rate</th>
+            <th>Time</th>
+
+        </tr>
+    </thead>
+    {% for call in calls %}
+         <tbody>
+        <tr>
+            <td>{{ call.country_name }}</td>
+            <td>{{ call.target_no }}</td>
+            <td>{{ call.duration }}</td>
+            <td>{{ call.rate }}</td>
+            <td>{{ call.timeofcall }}</td>
+
+        </tr>
+
+    </tbody>
+
+    {% endfor %}
+
+
+    </table>
+{% endblock %}

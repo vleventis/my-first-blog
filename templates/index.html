@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+<h2>{{ user.get_username }}</h2>
+    <ul>
+        <li>Username: {{ user.get_username }}</li>
+        <li>Credits: {{ user.credits }}</li>
+<li><form action="/your-credit/" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn">Go to payment</button>
+
+</form>
+</ul>
+</div>
+{% endblock %}
